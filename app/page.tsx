@@ -351,13 +351,13 @@ function Introduction() {
             transition={{ duration: 1, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="md:w-[38%] shrink-0 p-3"
           >
-            <div className="relative w-full aspect-[3/4] overflow-hidden">
+            <div className="relative w-full aspect-[3/4] overflow-hidden rounded-2xl">
               {/* Thin border frame */}
-              <div className="absolute inset-0 border border-white/15 z-10 pointer-events-none" />
+              <div className="absolute inset-0 border border-white/15 z-10 pointer-events-none rounded-2xl" />
               <img
                 src="/mahima-photo.jpeg"
                 alt="Mahima Gavesh"
-                className="w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-700"
+                className="w-full h-full object-cover object-top"
                 onError={(e) => {
                   const el = e.currentTarget as HTMLImageElement;
                   el.style.display = "none";
@@ -382,7 +382,7 @@ function Introduction() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: 0.3 }}
             >
-              <h3 className="font-name text-5xl md:text-6xl text-white leading-tight mb-2">Mahima<br />Gavesh</h3>
+              <h3 className="font-display text-6xl md:text-7xl text-white leading-none tracking-wide mb-2">Mahima<br />Gavesh</h3>
               <p className="text-sm uppercase tracking-[0.25em] text-[#c0161b] mt-3">UI/UX Designer &nbsp;|&nbsp; Frontend Developer &nbsp;|&nbsp; Full Stack Developer</p>
             </motion.div>
             <motion.p
@@ -433,7 +433,6 @@ function About() {
   const stats = [
     { num: "15+", label: "Projects Built" },
     { num: "20+", label: "Technologies" },
-    { num: "2023", label: "Started at SLIIT" },
   ];
 
   return (
@@ -460,13 +459,15 @@ function About() {
           </FadeUp>
 
           <FadeUp delay={0.2}>
-            <div className="grid grid-cols-3 gap-6">
-              {stats.map(({ num, label }, i) => (
-                <div key={i} className="border border-white/10 p-8 hover:border-[#c0161b]/50 transition group">
-                  <p className="font-display text-5xl text-[#c0161b] mb-3 group-hover:text-[#c0161b]/80 transition">{num}</p>
-                  <p className="text-xs uppercase tracking-widest text-white/40 leading-relaxed">{label}</p>
-                </div>
-              ))}
+            <div className="flex flex-col gap-8">
+              <div className="grid grid-cols-2 gap-6">
+                {stats.map(({ num, label }, i) => (
+                  <div key={i} className="border border-white/10 p-8 hover:border-[#c0161b]/50 transition group">
+                    <p className="font-display text-5xl text-[#c0161b] mb-3 group-hover:text-[#c0161b]/80 transition">{num}</p>
+                    <p className="text-xs uppercase tracking-widest text-white/40 leading-relaxed">{label}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </FadeUp>
         </div>
@@ -483,7 +484,7 @@ function Education() {
       degree: "BSc (Hons) Information Technology",
       specialisation: "Specialisation: Interactive Media",
       institution: "SLIIT — Sri Lanka Institute of Information Technology",
-      detail: "Kegalle, Sri Lanka · Currently in Year 3",
+      detail: "Malabe, Sri Lanka · Currently in Year 3",
     },
     {
       year: "2022",
@@ -676,6 +677,7 @@ const projects = [
     desc: "Modern website for SunCrush, a Sri Lankan fizzy drink brand. Micro-interactions, smooth animations, bold visuals and clear product presentation throughout.",
     tags: ["Figma", "UI/UX", "Animation"],
     figma: "https://www.figma.com/proto/ZuiMt076ycRhzTai8eFZeT",
+    linkedin: "https://www.linkedin.com/in/mahima-gavesh-751764191",
     live: null,
     github: null,
   },
@@ -685,6 +687,7 @@ const projects = [
     desc: "Website platform promoting panda adoption awareness. Emotionally engaging, user-centred interface encouraging public involvement and donations with accessible UX.",
     tags: ["Figma", "UI/UX", "Web"],
     figma: "https://www.figma.com/proto/gux282qfx9Q3B37vkACNRo",
+    linkedin: "https://www.linkedin.com/in/mahima-gavesh-751764191",
     live: null,
     github: null,
   },
@@ -694,6 +697,7 @@ const projects = [
     desc: "Online ticket booking and event management platform for Sri Lanka. Calendar-based booking, trending movies, sports events, and concerts — all in one seamless flow.",
     tags: ["Figma", "UI/UX", "Product Design"],
     figma: "https://lnkd.in/gGtCG7Si",
+    linkedin: "https://www.linkedin.com/in/mahima-gavesh-751764191",
     live: null,
     github: null,
   },
@@ -703,6 +707,7 @@ const projects = [
     desc: "Smart MERN-stack pet management platform. Role-based access, appointment booking, health records, community posts, real-time scheduling. My contributions: Home Page, Point System, Appointment System, Animations & Games.",
     tags: ["React", "Node.js", "MongoDB", "MERN"],
     figma: null,
+    linkedin: "https://www.linkedin.com/in/mahima-gavesh-751764191",
     live: null,
     github: "https://lnkd.in/guB3ThHS",
   },
@@ -718,21 +723,25 @@ function ProjectCard2({ project, index }: { project: typeof projects[0]; index: 
       initial={{ opacity: 0, y: 80 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.9, delay: index * 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
-      className="p-8 md:p-12"
+      className="group border-2 border-white/30 rounded-3xl hover:border-white/70 hover:bg-white/[0.03] transition-all duration-500 flex flex-col h-full"
+      style={{ padding: "3.5rem 4rem" }}
     >
-      <div className="flex items-start justify-between mb-8">
+      <div className="flex items-start justify-between mb-6">
         <span className="font-display text-6xl text-white/10 leading-none group-hover:text-white/20 transition duration-500">{project.num}</span>
-        <div className="flex gap-2 flex-wrap justify-end">
-          {project.tags.map(t => (
-            <span key={t} className="text-[10px] uppercase tracking-widest border border-white/20 px-3 py-1 text-white/40">{t}</span>
-          ))}
-        </div>
+      </div>
+      <div className="flex gap-2 flex-wrap mb-10">
+        {project.tags.map(t => (
+          <span key={t} className="text-[10px] uppercase tracking-widest px-3 py-1 text-white/40">{t}</span>
+        ))}
       </div>
 
-      <h3 className="font-display text-3xl md:text-4xl text-white mb-4">{project.title}</h3>
-      <p className="text-white/50 leading-relaxed mb-8 text-sm max-w-lg">{project.desc}</p>
+      <h3 className="font-display text-3xl md:text-4xl text-white mb-6">{project.title}</h3>
 
-      <div className="flex gap-4 flex-wrap">
+      <p className="text-white/50 leading-relaxed text-sm max-w-lg">{project.desc}</p>
+
+      <div className="flex-1" />
+
+      <div className="flex gap-4 flex-wrap pt-10">
         {project.figma && (
           <a href={project.figma} target="_blank" rel="noopener noreferrer" className="pill-btn gap-2 text-xs group/btn">
             View Figma <FaArrowRight className="group-hover/btn:translate-x-1 transition-transform" />
@@ -757,14 +766,16 @@ function Work() {
   return (
     <section id="work" className="bg-[#0d0d0d] py-40 px-6 md:px-14">
       <div className="max-w-6xl mx-auto">
-        <FadeUp className="mb-24">
+        <FadeUp className="mb-16">
           <p className="text-xs uppercase tracking-[0.4em] text-white/30 mb-4">05 — Project Portfolio</p>
           <h2 className="font-display text-5xl md:text-7xl text-white leading-none">
             MY<br /><span className="text-stroke">PROJECTS</span>
           </h2>
         </FadeUp>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="h-8 bg-[#0d0d0d]" />
+
+        <div className="grid md:grid-cols-2 gap-8 items-stretch">
           {projects.map((p, i) => <ProjectCard2 key={p.num} project={p} index={i} />)}
         </div>
       </div>
@@ -833,17 +844,6 @@ function Contact() {
 }
 
 /* ─── FOOTER ────────────────────────────────────────────────── */
-function Footer() {
-  return (
-    <footer className="bg-[#0a0a0a] border-t border-white/10 px-6 md:px-14 py-10 flex flex-col md:flex-row items-center justify-between gap-4">
-      <span className="font-display text-xl text-white/30">MG</span>
-      <p className="text-xs text-white/20 uppercase tracking-widest text-center">
-        © 2026 Mahima Gavesh — Designed & Built with Next.js & Framer Motion
-      </p>
-      <a href="#home" className="pill-btn text-xs">Back to Top ↑</a>
-    </footer>
-  );
-}
 
 /* ══════════════════════════════════════════════════════════════
    MAIN PAGE
@@ -863,14 +863,13 @@ export default function Home() {
       <div className="h-12 bg-black" />
       <Education />
       <div className="h-12 bg-black" />
-      <Sports />
-      <div className="h-12 bg-black" />
       <Skills />
-      <div className="h-24 bg-black" />
+      <div className="h-12 bg-black" />
       <Work />
       <div className="h-24 bg-black" />
+      <Sports />
+      <div className="h-24 bg-black" />
       <Contact />
-      <Footer />
     </div>
   );
 }
