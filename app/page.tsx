@@ -954,6 +954,7 @@ export default function Home() {
       <Sports />
       <div className="h-24 bg-black" />
       <Contact />
+      <div className="h-24 bg-black" />
       <Footer />
     </div>
   );
