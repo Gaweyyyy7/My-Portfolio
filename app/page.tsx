@@ -847,7 +847,7 @@ function Contact() {
                 key={label}
                 href={href}
                 {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                className="group flex items-center gap-6 border-2 border-white/40 rounded-3xl px-12 py-10 bg-transparent hover:border-[#c0161b] hover:bg-[#c0161b]/10 transition-all duration-300"
+                className="group flex items-center gap-6 border-2 border-white/40 rounded-3xl px-14 py-10 bg-transparent hover:border-[#c0161b] hover:bg-[#c0161b]/10 transition-all duration-300 overflow-hidden"
               >
                 <span className="text-[#c0161b] text-3xl shrink-0">{icon}</span>
                 <div className="flex-1 min-w-0">
