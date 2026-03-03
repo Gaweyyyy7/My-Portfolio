@@ -836,7 +836,7 @@ function Contact() {
             initial={{ opacity: 0, x: 40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex flex-col gap-5"
+            className="flex flex-col gap-5 pl-8"
           >
             {[
               { href: "mailto:mahimagavesh2002@gmail.com", icon: <FaEnvelope className="text-2xl" />, label: "mahimagavesh2002@gmail.com", sub: "Email" },
