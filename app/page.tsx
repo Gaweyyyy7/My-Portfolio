@@ -803,35 +803,41 @@ function Contact() {
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-xs uppercase tracking-[0.4em] text-white/30 mb-4"
+          className="text-xs uppercase tracking-[0.4em] text-white/30 mb-12"
         >06 — Contact</motion.p>
 
-        <div className="overflow-hidden mb-24">
-          <motion.h2
-            initial={{ y: "100%" }}
-            animate={inView ? { y: 0 } : {}}
-            transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="font-display text-6xl md:text-[9vw] text-white leading-none"
-          >
-            LET&apos;S<br /><span className="text-stroke">WORK</span><br />TOGETHER
-          </motion.h2>
-        </div>
+        {/* Two-column: heading left, cards right */}
+        <div className="grid md:grid-cols-2 gap-16 items-center">
 
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="border-t border-white/10 pt-14 grid md:grid-cols-2 gap-16 items-start"
-        >
-          {/* Left — quote */}
+          {/* Left — heading + quote */}
           <div>
-            <p className="text-white/50 text-lg leading-relaxed italic">
+            <div className="overflow-hidden mb-8">
+              <motion.h2
+                initial={{ y: "100%" }}
+                animate={inView ? { y: 0 } : {}}
+                transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
+                className="font-display text-6xl md:text-[7vw] text-white leading-none"
+              >
+                LET&apos;S<br /><span className="text-stroke">WORK</span><br />TOGETHER
+              </motion.h2>
+            </div>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={inView ? { opacity: 1 } : {}}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="text-white/40 text-base leading-relaxed italic"
+            >
               &ldquo;Let&apos;s build something meaningful together and feel free to reach out anytime.&rdquo;
-            </p>
+            </motion.p>
           </div>
 
-          {/* Right — big contact cards */}
-          <div className="flex flex-col gap-5">
+          {/* Right — contact cards */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            animate={inView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="flex flex-col gap-5"
+          >
             {[
               { href: "mailto:mahimagavesh2002@gmail.com", icon: <FaEnvelope className="text-2xl" />, label: "mahimagavesh2002@gmail.com", sub: "Email" },
               { href: "https://www.linkedin.com/in/mahima-gavesh-751764191", icon: <FaLinkedin className="text-2xl" />, label: "LinkedIn Profile", sub: "linkedin.com/in/mahima-gavesh", external: true },
@@ -850,8 +856,9 @@ function Contact() {
                 </div>
               </a>
             ))}
-          </div>
-        </motion.div>
+          </motion.div>
+
+        </div>
       </div>
     </section>
   );
