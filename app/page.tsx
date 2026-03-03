@@ -841,14 +841,13 @@ function Contact() {
                 key={label}
                 href={href}
                 {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                className="group flex items-center gap-6 border border-white/10 rounded-3xl px-10 py-8 bg-white/[0.03] hover:bg-white/[0.07] hover:border-white/30 transition-all duration-300"
+                className="flex items-center gap-6 border border-white/15 rounded-3xl px-10 py-8 bg-white/[0.05]"
               >
                 <span className="text-[#c0161b] text-3xl shrink-0">{icon}</span>
                 <div className="flex-1 min-w-0">
                   <p className="text-white font-semibold text-xl truncate">{label}</p>
                   <p className="text-white/35 text-sm mt-1 truncate">{sub}</p>
                 </div>
-                <FaArrowRight className="text-white/20 group-hover:text-white/70 group-hover:translate-x-1 transition-all duration-300 shrink-0 text-lg" />
               </a>
             ))}
           </div>
@@ -859,6 +858,69 @@ function Contact() {
 }
 
 /* ─── FOOTER ────────────────────────────────────────────────── */
+function Footer() {
+  return (
+    <footer className="bg-[#0d0d0d] border-t border-white/10 px-6 md:px-14 pt-16 pb-8">
+      <div className="max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-12 mb-12">
+
+          {/* Left — Identity */}
+          <div>
+            <h3 className="font-display text-2xl text-[#c0161b] mb-3">Mahima Gavesh</h3>
+            <p className="text-white/50 text-sm mb-1">UI/UX Designer &amp; Front-End Developer</p>
+            <p className="text-white/30 text-sm">Crafting digital experiences with purpose and precision.</p>
+          </div>
+
+          {/* Middle — Connect */}
+          <div>
+            <p className="text-sm font-semibold text-white/70 mb-1">Connect with me</p>
+            <div className="w-10 h-[2px] bg-[#c0161b] mb-5" />
+            <ul className="space-y-4">
+              <li>
+                <a href="https://www.linkedin.com/in/mahima-gavesh-751764191" target="_blank" rel="noopener noreferrer"
+                  className="flex items-center gap-3 text-white/60 hover:text-white transition-colors text-sm">
+                  <FaLinkedin className="text-base" /> LinkedIn
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/Gaweyyyy7" target="_blank" rel="noopener noreferrer"
+                  className="flex items-center gap-3 text-white/60 hover:text-white transition-colors text-sm">
+                  <FaGithub className="text-base" /> GitHub
+                </a>
+              </li>
+              <li>
+                <a href="mailto:mahimagavesh2002@gmail.com"
+                  className="flex items-center gap-3 text-white/60 hover:text-white transition-colors text-sm">
+                  <FaEnvelope className="text-base" /> Email
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Right — Quick Links */}
+          <div>
+            <p className="text-sm font-semibold text-white/70 mb-1">Quick Links</p>
+            <div className="w-10 h-[2px] bg-[#c0161b] mb-5" />
+            <ul className="space-y-4">
+              {[["About","about"],["Education","education"],["Skills","skills"],["Projects","work"],["Contact","contact"]].map(([label, id]) => (
+                <li key={id}>
+                  <a href={`#${id}`} className="text-white/60 hover:text-white transition-colors text-sm">{label}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+        </div>
+
+        <div className="border-t border-white/10 pt-6">
+          <p className="text-xs text-white/30 text-center">
+            &copy; 2026 Mahima Gavesh. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+}
 
 /* ══════════════════════════════════════════════════════════════
    MAIN PAGE
@@ -885,6 +947,7 @@ export default function Home() {
       <Sports />
       <div className="h-24 bg-black" />
       <Contact />
+      <Footer />
     </div>
   );
 }
