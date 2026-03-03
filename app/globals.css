@@ -85,7 +85,7 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #7c3aed, #6d28d9);
+  background: #c0161b;
   color: #fff;
   border-radius: 9999px;
   padding: 0.7rem 2rem;
@@ -100,9 +100,9 @@ body {
 }
 
 .btn-resume:hover {
-  background: linear-gradient(135deg, #6d28d9, #5b21b6);
+  background: #a0101a;
   transform: scale(1.04);
-  box-shadow: 0 0 40px rgba(124, 58, 237, 0.5);
+  box-shadow: 0 0 40px rgba(192, 22, 27, 0.5);
 }
 
 /* Theme pill button in nav */
