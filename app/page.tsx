@@ -841,14 +841,14 @@ function Contact() {
                 key={label}
                 href={href}
                 {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                className="group flex items-center gap-5 border border-white/10 rounded-2xl px-7 py-6 bg-white/[0.03] hover:bg-white/[0.07] hover:border-white/30 transition-all duration-300"
+                className="group flex items-center gap-6 border border-white/10 rounded-3xl px-10 py-8 bg-white/[0.03] hover:bg-white/[0.07] hover:border-white/30 transition-all duration-300"
               >
-                <span className="text-[#c0161b] shrink-0">{icon}</span>
+                <span className="text-[#c0161b] text-3xl shrink-0">{icon}</span>
                 <div className="flex-1 min-w-0">
-                  <p className="text-white font-semibold text-base truncate">{label}</p>
-                  <p className="text-white/35 text-xs mt-0.5 truncate">{sub}</p>
+                  <p className="text-white font-semibold text-xl truncate">{label}</p>
+                  <p className="text-white/35 text-sm mt-1 truncate">{sub}</p>
                 </div>
-                <FaArrowRight className="text-white/20 group-hover:text-white/70 group-hover:translate-x-1 transition-all duration-300 shrink-0" />
+                <FaArrowRight className="text-white/20 group-hover:text-white/70 group-hover:translate-x-1 transition-all duration-300 shrink-0 text-lg" />
               </a>
             ))}
           </div>
