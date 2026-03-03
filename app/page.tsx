@@ -508,7 +508,7 @@ function Education() {
         <div className="grid md:grid-cols-2 gap-8 mb-28">
           {educationItems.map((item, i) => (
             <FadeUp key={i} delay={i * 0.15}>
-              <div className="border border-white/10 hover:border-[#c0161b]/40 transition-all duration-500 p-8 group">
+              <div className="p-8">
                 <p className="text-xs font-mono text-[#c0161b] mb-4 tracking-widest">{item.year}</p>
                 <h3 className="font-display text-2xl text-white mb-1">{item.degree}</h3>
                 <p className="text-white/50 text-sm mb-3">{item.specialisation}</p>
@@ -718,7 +718,7 @@ function ProjectCard2({ project, index }: { project: typeof projects[0]; index: 
       initial={{ opacity: 0, y: 80 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.9, delay: index * 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
-      className="group border border-white/10 hover:border-white/30 transition-all duration-500 p-8 md:p-12"
+      className="p-8 md:p-12"
     >
       <div className="flex items-start justify-between mb-8">
         <span className="font-display text-6xl text-white/10 leading-none group-hover:text-white/20 transition duration-500">{project.num}</span>
