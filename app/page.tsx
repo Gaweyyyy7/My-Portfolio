@@ -336,7 +336,7 @@ function Introduction() {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="intro" ref={ref} className="relative bg-black pt-40 pb-16 px-6 md:px-14 overflow-hidden">
+    <section id="intro" ref={ref} className="relative bg-black pt-40 pb-4 px-6 md:px-14 overflow-hidden">
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:80px_80px]" />
 
       <div className="relative z-10 max-w-6xl mx-auto">
@@ -858,7 +858,7 @@ export default function Home() {
       <TableOfContents />
       <div className="h-12 bg-black" />
       <Introduction />
-      <div className="h-12 bg-black" />
+      <div className="h-4 bg-black" />
       <About />
       <div className="h-12 bg-black" />
       <Education />
