@@ -821,27 +821,34 @@ function Contact() {
           initial={{ opacity: 0, y: 40 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="border-t border-white/10 pt-10 max-w-xl"
+          className="border-t border-white/10 pt-14 grid md:grid-cols-2 gap-16 items-start"
         >
-          <p className="text-white/50 text-base leading-relaxed mb-10 italic">
-            &ldquo;Let&apos;s build something meaningful together and feel free to reach out anytime.&rdquo;
-          </p>
+          {/* Left — quote */}
+          <div>
+            <p className="text-white/50 text-lg leading-relaxed italic">
+              &ldquo;Let&apos;s build something meaningful together and feel free to reach out anytime.&rdquo;
+            </p>
+          </div>
 
-          <div className="flex flex-col gap-4">
+          {/* Right — big contact cards */}
+          <div className="flex flex-col gap-5">
             {[
-              { href: "mailto:mahimagavesh2002@gmail.com", icon: <FaEnvelope />, label: "mahimagavesh2002@gmail.com" },
-              { href: "https://www.linkedin.com/in/mahima-gavesh-751764191", icon: <FaLinkedin />, label: "LinkedIn Profile", external: true },
-              { href: "https://github.com/Gaweyyyy7", icon: <FaGithub />, label: "GitHub Profile", external: true },
-            ].map(({ href, icon, label, external }) => (
+              { href: "mailto:mahimagavesh2002@gmail.com", icon: <FaEnvelope className="text-2xl" />, label: "mahimagavesh2002@gmail.com", sub: "Email" },
+              { href: "https://www.linkedin.com/in/mahima-gavesh-751764191", icon: <FaLinkedin className="text-2xl" />, label: "LinkedIn Profile", sub: "linkedin.com/in/mahima-gavesh", external: true },
+              { href: "https://github.com/Gaweyyyy7", icon: <FaGithub className="text-2xl" />, label: "GitHub Profile", sub: "github.com/Gaweyyyy7", external: true },
+            ].map(({ href, icon, label, sub, external }) => (
               <a
                 key={label}
                 href={href}
                 {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                className="group flex items-center gap-4 border border-white/10 rounded-2xl px-6 py-4 bg-white/[0.03] hover:bg-white/[0.07] hover:border-white/25 transition-all duration-300"
+                className="group flex items-center gap-5 border border-white/10 rounded-2xl px-7 py-6 bg-white/[0.03] hover:bg-white/[0.07] hover:border-white/30 transition-all duration-300"
               >
-                <span className="text-[#c0161b] text-lg">{icon}</span>
-                <span className="text-white/80 text-sm font-medium flex-1">{label}</span>
-                <FaArrowRight className="text-white/20 group-hover:text-white/60 group-hover:translate-x-1 transition-all duration-300 text-xs" />
+                <span className="text-[#c0161b] shrink-0">{icon}</span>
+                <div className="flex-1 min-w-0">
+                  <p className="text-white font-semibold text-base truncate">{label}</p>
+                  <p className="text-white/35 text-xs mt-0.5 truncate">{sub}</p>
+                </div>
+                <FaArrowRight className="text-white/20 group-hover:text-white/70 group-hover:translate-x-1 transition-all duration-300 shrink-0" />
               </a>
             ))}
           </div>
