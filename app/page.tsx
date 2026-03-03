@@ -174,7 +174,7 @@ function Hero() {
       {/* Background grid */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:60px_60px] pointer-events-none" />
 
-      <div className="relative z-10 max-w-7xl mx-auto w-full px-6 md:px-14 grid md:grid-cols-2 gap-12 items-center pt-24 pb-16">
+      <div className="relative z-10 max-w-7xl mx-auto w-full px-10 md:px-24 grid md:grid-cols-2 gap-12 items-center pt-24 pb-16">
 
         {/* ── LEFT: Name + Role + Bio ── */}
         <div className="flex flex-col gap-6">
