@@ -821,29 +821,29 @@ function Contact() {
           initial={{ opacity: 0, y: 40 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="flex flex-col md:flex-row gap-6 items-start md:items-center justify-between border-t border-white/10 pt-10"
+          className="border-t border-white/10 pt-10 max-w-xl"
         >
-          <p className="text-white/50 max-w-sm text-sm leading-relaxed">
-              Open to freelance projects, full-time roles, and collaboration. Based in Kegalle, Sri Lanka — available remote globally. I respond quickly and love interesting challenges.
-            </p>
+          <p className="text-white/50 text-base leading-relaxed mb-10 italic">
+            &ldquo;Let&apos;s build something meaningful together and feel free to reach out anytime.&rdquo;
+          </p>
 
-          <div className="flex flex-col gap-3">
-            <a href="mailto:mahimagavesh2002@gmail.com" className="group flex items-center gap-3 text-white hover:text-white/60 transition text-sm font-medium">
-              <FaEnvelope className="text-white/40" /> mahimagavesh2002@gmail.com
-              <FaArrowRight className="opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
-            </a>
-            <a href="tel:+94723489031" className="group flex items-center gap-3 text-white hover:text-white/60 transition text-sm font-medium">
-              <span className="text-white/40 text-xs">TEL</span> +94 72 348 9031
-              <FaArrowRight className="opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
-            </a>
-            <a href="https://github.com/Gaweyyyy7" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-3 text-white hover:text-white/60 transition text-sm font-medium">
-              <FaGithub className="text-white/40" /> Github / Gaweyyyy7
-              <FaArrowRight className="opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
-            </a>
-            <a href="https://www.linkedin.com/in/mahima-gavesh-751764191" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-3 text-white hover:text-white/60 transition text-sm font-medium">
-              <FaLinkedin className="text-white/40" /> LinkedIn / mahima-gavesh
-              <FaArrowRight className="opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
-            </a>
+          <div className="flex flex-col gap-4">
+            {[
+              { href: "mailto:mahimagavesh2002@gmail.com", icon: <FaEnvelope />, label: "mahimagavesh2002@gmail.com" },
+              { href: "https://www.linkedin.com/in/mahima-gavesh-751764191", icon: <FaLinkedin />, label: "LinkedIn Profile", external: true },
+              { href: "https://github.com/Gaweyyyy7", icon: <FaGithub />, label: "GitHub Profile", external: true },
+            ].map(({ href, icon, label, external }) => (
+              <a
+                key={label}
+                href={href}
+                {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                className="group flex items-center gap-4 border border-white/10 rounded-2xl px-6 py-4 bg-white/[0.03] hover:bg-white/[0.07] hover:border-white/25 transition-all duration-300"
+              >
+                <span className="text-[#c0161b] text-lg">{icon}</span>
+                <span className="text-white/80 text-sm font-medium flex-1">{label}</span>
+                <FaArrowRight className="text-white/20 group-hover:text-white/60 group-hover:translate-x-1 transition-all duration-300 text-xs" />
+              </a>
+            ))}
           </div>
         </motion.div>
       </div>
