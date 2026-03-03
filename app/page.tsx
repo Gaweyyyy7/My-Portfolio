@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useSpring, useTransform, useInView, AnimatePresence } from "framer-motion";
-import { FaEnvelope, FaGithub, FaLinkedin, FaArrowRight } from "react-icons/fa";
+import { FaEnvelope, FaGithub, FaLinkedin, FaArrowRight, FaFileAlt } from "react-icons/fa";
 import { SiFigma, SiMongodb, SiTailwindcss, SiTypescript } from "react-icons/si";
 import { FaReact, FaNodeJs, FaHtml5 } from "react-icons/fa";
 
@@ -224,8 +224,16 @@ function Hero() {
             transition={{ duration: 0.7, delay: 0.85 }}
             className="flex flex-wrap gap-3 pt-2"
           >
-            <a href="#work" className="btn-red">View Projects</a>
-            <a href="#contact" className="pill-btn">Let&apos;s Chat</a>
+            <a href="#contact" className="pill-btn flex items-center gap-2">
+              Get In Touch <FaEnvelope className="text-sm" />
+            </a>
+            <a
+              href="/Mahima-Gavesh-CV.pdf"
+              download="Mahima-Gavesh-CV.pdf"
+              className="btn-resume flex items-center gap-2"
+            >
+              Resume <FaFileAlt className="text-sm" />
+            </a>
           </motion.div>
         </div>
 

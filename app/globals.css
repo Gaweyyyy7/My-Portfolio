@@ -81,6 +81,30 @@ body {
   box-shadow: 0 0 40px rgba(192, 22, 27, 0.5);
 }
 
+.btn-resume {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #7c3aed, #6d28d9);
+  color: #fff;
+  border-radius: 9999px;
+  padding: 0.7rem 2rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  white-space: nowrap;
+  cursor: none;
+  text-decoration: none;
+}
+
+.btn-resume:hover {
+  background: linear-gradient(135deg, #6d28d9, #5b21b6);
+  transform: scale(1.04);
+  box-shadow: 0 0 40px rgba(124, 58, 237, 0.5);
+}
+
 /* Theme pill button in nav */
 .theme-pill {
   display: inline-flex;
